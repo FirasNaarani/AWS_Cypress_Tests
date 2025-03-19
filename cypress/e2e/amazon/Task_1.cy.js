@@ -41,8 +41,6 @@ describe('Task 1.3', () => {
     });
 
     it('should return relevant results when searching for "iPhone"', () => {
-
-        // Define search term as a constant for easy reuse
         const searchTerm = 'iPhone';
 
         // Wait for search box to be fully loaded and visible
@@ -91,6 +89,6 @@ describe('Task 1.3', () => {
         });
 
         // 4. Verify search results count is displayed
-        cy.get('[data-component-type="s-result-info-bar"]').should('exist');
+        cy.get('[data-component-type="s-result-info-bar"]').should('exist').should('contain.text', searchTerm);
     });
 });
