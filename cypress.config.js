@@ -13,6 +13,10 @@ module.exports = defineConfig({
       runMode: 1,
       openMode: 0
     },
+    env: {
+      email: process.env.EMAIL,
+      password: process.env.PASS
+    },
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },

@@ -13,7 +13,8 @@
   "type": "commonjs",
   "devDependencies": {
     "cypress": "^13.8.1",
-    "cypress-dotenv": "^3.0.1"
+    "cypress-dotenv": "^3.0.1",
+    "cypress-plugin-tab": "^1.0.5"
   },
   "dependencies": {
     "cypress-xpath": "^2.0.1"
