@@ -1,45 +1,59 @@
 import AmazonProduct from "../../support/AmazonProd.js";
 import AmazonTestBase from "../../support/BaseTestCase.js";
+let productData;
 
 describe('Amazon Shopping Cart Tests', () => {
 
     const BaseTestCase = new AmazonTestBase();
 
-    const PENCIL_SHARPENER = new AmazonProduct(
-        'Bostitch',
-        'Office Personal Electric Pencil Sharpener, Powerful Stall-Free Motor, High Capacity Shavings Tray, Gray (EPS4-KTGRAY)',
-        'Gray',
-        'https://a.co/d/2WAHre0'
-    );
+    // Product objects will be initialized in the before() hook
+    let PENCIL_SHARPENER;
+    let SCISSORS;
+    let PENCIL_SHARPENER_PENCIL_1;
+    let PENCIL_SHARPENER_PENCIL_2;
+    let PENCIL_SHARPENER_PENCIL_3;
 
-    const SCISSORS = new AmazonProduct(
-        'iBayam Scissors',
-        'Scissors, iBayam 8" All Purpose Scissors Bulk 3-Pack, Ultra Sharp 2.5mm Thick Blade Shears Comfort-Grip for Office Desk Accessories Sewing Fabric Home Craft Teacher School Supplies, Right/Left Handed',
-        'Red, Black, Blue',
-        'https://www.amazon.com/Scissors-iBayam-Crafting-Scrapbooking-Knitting/dp/B07H3QKN2Z'
-    );
+    before(() => {
+        cy.fixture('Data.json').then((data) => {
+            productData = data;
 
-    const PENCIL_SHARPENER_PENCIL_1 = new AmazonProduct(
-        'Bostitch',
-        'Personal Electric Pencil Sharpener, Electrical Automatic Powerful Motor for Fast Sharpening, Compact Electric Sharpener, Includes Sharpening Tray & Safety Switch for Home, School, Office.',
-        'Silver',
-        'https://a.co/d/i8JAmTG'
-    )
+            // Create product objects from the JSON data
+            PENCIL_SHARPENER = new AmazonProduct(
+                productData.products[0].brand,
+                productData.products[0].name,
+                productData.products[0].color,
+                productData.products[0].url
+            );
 
-    const PENCIL_SHARPENER_PENCIL_2 = new AmazonProduct(
-        'Bostitch',
-        'Office Vertical Electric Pencil Sharpener, Powerful Stall-Free Motor, Prevents Over-Sharpening, Black (EPS5V-BLK)',
-        'Black',
-        'https://a.co/d/1XVByGL'
-    )
+            SCISSORS = new AmazonProduct(
+                productData.products[1].brand,
+                productData.products[1].name,
+                productData.products[1].color,
+                productData.products[1].url
+            );
 
-    const PENCIL_SHARPENER_PENCIL_3 = new AmazonProduct(
-        'Bostitch',
-        'Office Vertical Electric Pencil Sharpener, Powerful Stall-Free Motor, Prevents Over-Sharpening, Blue (EPS5V-Blue)',
-        'Blue',
-        'https://a.co/d/26O8qII'
-    )
+            PENCIL_SHARPENER_PENCIL_1 = new AmazonProduct(
+                productData.products[2].brand,
+                productData.products[2].name,
+                productData.products[2].color,
+                productData.products[2].url
+            );
 
+            PENCIL_SHARPENER_PENCIL_2 = new AmazonProduct(
+                productData.products[3].brand,
+                productData.products[3].name,
+                productData.products[3].color,
+                productData.products[3].url
+            );
+
+            PENCIL_SHARPENER_PENCIL_3 = new AmazonProduct(
+                productData.products[4].brand,
+                productData.products[4].name,
+                productData.products[4].color,
+                productData.products[4].url
+            );
+        });
+    });
 
     beforeEach(() => {
         // Start the test by visiting Amazon
@@ -96,6 +110,6 @@ describe('Amazon Shopping Cart Tests', () => {
 
     afterEach(() => {
         BaseTestCase.Login();
-        BaseTestCase.cleanupCart();
+        BaseTestCase.CleanUpCart();
     });
 });

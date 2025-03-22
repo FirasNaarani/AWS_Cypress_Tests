@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "brand": "Bostitch",
+      "name": "Office Personal Electric Pencil Sharpener, Powerful Stall-Free Motor, High Capacity Shavings Tray, Gray (EPS4-KTGRAY)",
+      "color": "Gray",
+      "url": "https://a.co/d/2WAHre0"
+    },
+    {
+      "brand": "iBayam Scissors",
+      "name": "Scissors, iBayam 8\" All Purpose Scissors Bulk 3-Pack, Ultra Sharp 2.5mm Thick Blade Shears Comfort-Grip for Office Desk Accessories Sewing Fabric Home Craft Teacher School Supplies, Right/Left Handed",
+      "color": "Red, Black, Blue",
+      "url": "https://www.amazon.com/Scissors-iBayam-Crafting-Scrapbooking-Knitting/dp/B07H3QKN2Z"
+    },
+    {
+      "brand": "Bostitch",
+      "name": "Personal Electric Pencil Sharpener, Electrical Automatic Powerful Motor for Fast Sharpening, Compact Electric Sharpener, Includes Sharpening Tray & Safety Switch for Home, School, Office.",
+      "color": "Silver",
+      "url": "https://a.co/d/i8JAmTG"
+    },
+    {
+      "brand": "Bostitch",
+      "name": "Office Vertical Electric Pencil Sharpener, Powerful Stall-Free Motor, Prevents Over-Sharpening, Black (EPS5V-BLK)",
+      "color": "Black",
+      "url": "https://a.co/d/1XVByGL"
+    },
+    {
+      "brand": "Bostitch",
+      "name": "Office Vertical Electric Pencil Sharpener, Powerful Stall-Free Motor, Prevents Over-Sharpening, Blue (EPS5V-Blue)",
+      "color": "Blue",
+      "url": "https://a.co/d/26O8qII"
+    }
+  ]
+}

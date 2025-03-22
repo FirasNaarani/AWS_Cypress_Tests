@@ -22,6 +22,9 @@ class AmazonTestBase {
         cy.log('Amazon.com homepage loaded');
     }
 
+    /**
+     * Login to Amazon.com
+     */
     Login() {
         this.Start();
 
@@ -90,18 +93,18 @@ class AmazonTestBase {
     /**
      * Clean up after test by emptying the cart
      */
-    cleanupCart() {
+    CleanUpCart() {
         // Go to cart
-        this.goToCart();
+        this.GoToCart();
 
         // Empty the cart
-        this.emptyShoppingCart();
+        this.EmptyShoppingCart();
     }
 
     /**
      * Empty the shopping cart
      */
-    emptyShoppingCart() {
+    EmptyShoppingCart() {
         // Use a simple approach: look for items and delete the first one repeatedly
         const checkAndDeleteFirstItem = () => {
             cy.get('body').then($body => {
@@ -137,7 +140,7 @@ class AmazonTestBase {
     /**
      * Navigate to the cart page
      */
-    goToCart() {
+    GoToCart() {
         cy.get('#nav-cart').click();
     }
 }

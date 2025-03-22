@@ -1,3 +1,5 @@
+import AmazonTestBase from "../../support/BaseTestCase.js";
+
 describe('Task 1.2', () => {
 
     it('1 - User Authentication Test', () => {
@@ -23,21 +25,14 @@ describe('Task 1.2', () => {
 });
 
 describe('Task 1.3', () => {
+    const BaseTestCase = new AmazonTestBase();
+
     beforeEach(() => {
-        cy.visit('/', { timeout: 30000 });
+        // Start the test by visiting Amazon
+        BaseTestCase.Start();
 
-        cy.get('body').then($body => {
-            // Check if the international shipping popup exists
-            if ($body.find('.glow-toaster[data-toaster-type="AIS_INGRESS"]').length > 0) {
-                // Click the Dismiss button
-                cy.get('.glow-toaster-button-dismiss input[data-action-type="DISMISS"]')
-                    .should('exist')
-                    .click({ force: true });
-
-                // Wait for the popup to disappear
-                cy.get('.glow-toaster[data-toaster-type="AIS_INGRESS"]').should('not.be.visible');
-            }
-        });
+        // Dismiss any popups
+        BaseTestCase.DismissPopup();
     });
 
     it('should return relevant results when searching for "iPhone"', () => {

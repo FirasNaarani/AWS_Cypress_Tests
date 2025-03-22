@@ -138,6 +138,7 @@ class AmazonProduct {
 
                                                 // Click on the element that gave us the right color
                                                 cy.focused().click();
+                                                cy.wait(3000); // Wait for selection to complete
                                             } else {
                                                 // Continue to the next element
                                                 tabAndCheck(attempt + 1);
@@ -156,10 +157,6 @@ class AmazonProduct {
         return this;
     }
 
-    VerifyInCart() {
-        cy.get('#nav-cart').click();
-        cy.contains(this.title).should('be.visible');
-    }
 }
 
 export default AmazonProduct;
